@@ -1,14 +1,75 @@
-# Magic 8 Ball 🎱
+<div align="center">
 
-The Application answer yore some question
+# 🔮 Magic 8 Ball
 
-## Our Goal
+**Ask a question, tap the ball — get one of six classic answers.**
 
-The objective of this challenge is to solidify what you've learn't in the Dicee tutorial. This app will guide you through the steps required to build an 8 ball app and you will be applying what you have learnt about Stateless and Stateful Flutter widgets.
+![Magic 8 Ball preview](images/ball1.png)
 
+[![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white)](https://dart.dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-## What you will create
+</div>
 
-We’re going to make a magical 8 ball app, it will give you the answers to all the tricky questions in life. You can make the ball change at the press of a button. 
+---
 
-![Finished App](https://github.com/londonappbrewery/Images/blob/master/8-ball-flutter-gif.gif)
+## 🇬🇧 English
+
+The fortune-telling toy from my early Flutter days: tap the 8-ball and it cycles through six classic answers ("Yes definitely", "Ask again later", …). A simple state machine — `int ballNumber` drives which image is shown, exactly like the dice app but with a single state variable.
+
+While revisiting the code I also fixed a real layout bug: the ball was originally wrapped in an `Expanded` directly inside a `Center`. `Expanded` only makes sense inside a `Flex` (`Row`/`Column`), so that structure was invalid and produced layout errors. The fixed version centers the ball correctly with a plain `Center > TextButton`.
+
+### ✨ What's inside
+
+| Concept | Where it lives |
+|---|---|
+| `StatefulWidget` with a single state variable | `lib/main.dart` |
+| `Random` answer selection | `lib/main.dart` |
+| **Bug fix:** invalid `Expanded`-inside-`Center` removed | `lib/main.dart` |
+| A smoke test that "shakes" the ball | `test/widget_test.dart` |
+
+### 🚀 Run it
+
+```bash
+flutter pub get
+flutter run
+```
+
+### 🧪 Test it
+
+```bash
+flutter test
+```
+
+---
+
+## 🇮🇷 فارسی
+
+اسباب‌بازی فال‌گیری از روزهای اول Flutter من: توپ جادویی هشت را لمس کنید تا بین شش جواب کلاسیک («قطعاً بله»، «بعداً بپرس» و…) یکی را نشان دهد. یک ماشین حالت ساده — متغیر `ballNumber` مشخص می‌کند کدام تصویر نمایش داده شود، درست مثل اپ تاس اما با فقط یک متغیر وضعیت.
+
+در بازبینی کد، یک باگ واقعی چیدمان هم رفع شد: تصویر توپ در نسخهٔ اولیه داخل `Expanded` قرار داشت که مستقیماً زیر `Center` بود. `Expanded` فقط داخل `Row` یا `Column` معنا دارد و آن ساختار نامعتبر بود و خطای چیدمان تولید می‌کرد. نسخهٔ اصلاح‌شده توپ را با `Center > TextButton` به‌درستی وسط‌چین می‌کند.
+
+### ✨ چه چیزهایی در آن هست
+
+| مفهوم | محل استفاده |
+|---|---|
+| `StatefulWidget` با یک متغیر وضعیت | `lib/main.dart` |
+| انتخاب جواب تصادفی | `lib/main.dart` |
+| **رفع باگ:** حذف `Expanded` نامعتبر داخل `Center` | `lib/main.dart` |
+| تست اسموک با «تکان دادن» توپ | `test/widget_test.dart` |
+
+### 🚀 اجرا
+
+```bash
+flutter pub get
+flutter run
+```
+
+---
+
+<div align="center">
+
+**Built with Flutter · Maintained by [Parsa Fathi](https://github.com/ParsaFathii)**
+
+</div>

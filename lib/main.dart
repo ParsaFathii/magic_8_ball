@@ -3,51 +3,58 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const Magic8BallApp());
 }
 
-class MyApp extends StatelessWidget {
-  MyApp({super.key});
+class Magic8BallApp extends StatelessWidget {
+  const Magic8BallApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Magic 8 Ball',
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan),
+      ),
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.cyan.shade800,
-          title: Text(
+          title: const Text(
             'Magic 8 Ball',
             style: TextStyle(color: Colors.white),
           ),
         ),
-        body: BallState(),
+        body: const BallPage(),
       ),
     );
   }
 }
 
-class BallState extends StatefulWidget {
-  BallState({super.key});
+/// Ask a question, tap the ball, and get one of six classic answers.
+class BallPage extends StatefulWidget {
+  const BallPage({super.key});
 
   @override
-  State<BallState> createState() => _BallStateState();
+  State<BallPage> createState() => _BallPageState();
 }
 
-class _BallStateState extends State<BallState> {
-  int click = 0;
+class _BallPageState extends State<BallPage> {
+  static final _random = Random();
+
+  int _ballNumber = 0;
+
+  void _shakeBall() {
+    setState(() => _ballNumber = _random.nextInt(6));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Expanded(
-        child: TextButton(
-          onPressed: () {
-            setState(() {
-              click = Random().nextInt(6);
-            });
-          },
-          child: Image.asset('images/ball$click.png'),
-        ),
+      child: TextButton(
+        onPressed: _shakeBall,
+        child: Image.asset('images/ball$_ballNumber.png'),
       ),
     );
   }
