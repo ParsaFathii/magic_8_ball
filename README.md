@@ -14,6 +14,22 @@
 
 ---
 
+## 📲 Try it · امتحانش کنید
+
+| 🌐 **Live demo** · دموی آنلاین | **[ParsaFathii.github.io/magic_8_ball](https://ParsaFathii.github.io/magic_8_ball/)** — runs right in the browser, no install needed · مستقیم در مرورگر اجرا می‌شود، بدون نصب |
+| 🤖 **Android APK** · نسخهٔ اندروید | **[Latest release](https://github.com/ParsaFathii/magic_8_ball/releases/latest)** — download `app-release.apk` · فایل `app-release.apk` را دانلود کنید |
+
+---
+
+## 📸 Screenshots · اسکرین‌شات‌ها
+
+<p align="center">
+  <img src="docs/images/home.png" width="240" alt="magic_8_ball — Ask a question…">
+  <img src="docs/images/answer.png" width="240" alt="magic_8_ball — …tap the ball for one of six answers">
+</p>
+
+---
+
 ## 🇬🇧 English
 
 The fortune-telling toy from my early Flutter days: tap the 8-ball and it cycles through six classic answers ("Yes definitely", "Ask again later", …). A simple state machine — `int ballNumber` drives which image is shown, exactly like the dice app but with a single state variable.
